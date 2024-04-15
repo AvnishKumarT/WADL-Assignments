@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Exam Admin Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f8f9fa;
+      }
+      #sidebar {
+        background-color: #343a40;
+        color: #fff;
+        height: 100vh;
+      }
+      #sidebar ul.navbar-nav {
+        padding-top: 20px;
+      }
+      #content {
+        padding: 20px;
+      }
+      .card {
+        margin-bottom: 20px;
+      }
+      .card-header {
+        background-color: #007bff;
+        color: #fff;
+      }
+      .card-body {
+        background-color: #f8f9fa;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Navbar -->
+        <nav
+          class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow"
+        >
+          <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Exam Admin</a>
+          <ul class="navbar-nav px-3">
+            <li class="nav-item text-nowrap">
+              <div class="dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="userDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <i class="fas fa-user"></i> Avnish
+                </a>
+                <div
+                  class="dropdown-menu dropdown-menu-right"
+                  aria-labelledby="userDropdown"
+                >
+                  <a class="dropdown-item" href="#">
+                    <i class="fas fa-user"></i> Profile
+                  </a>
+                  <a class="dropdown-item" href="#">
+                    <i class="fas fa-cog"></i> Settings
+                  </a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">
+                    <i class="fas fa-sign-out-alt"></i> Sign out
+                  </a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Sidebar -->
+        <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">
+                  <i class="fas fa-tachometer-alt"></i> Dashboard
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="fas fa-file-alt"></i> Exams
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="fas fa-poll"></i> Results
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="fas fa-calendar-alt"></i> Schedule
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="fas fa-user"></i> Students
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="fas fa-cogs"></i> Settings
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <!-- Main content -->
+        <main
+          role="main"
+          class="col-md-9 ml-sm-auto col-lg-10 px-md-4"
+          id="content"
+        >
+          <h2 class="mt-3">Exam Admin Dashboard</h2>
+
+          <div class="row">
+            <!-- Statistics Cards -->
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-header bg-primary text-white">Total Exams</div>
+                <div class="card-body">
+                  <p class="card-text">50</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-header bg-success text-white">
+                  Active Exams
+                </div>
+                <div class="card-body">
+                  <p class="card-text">30</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-header bg-danger text-white">Failed Exams</div>
+                <div class="card-body">
+                  <p class="card-text">5</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <!-- Additional Statistics Cards -->
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-header bg-warning text-white">
+                  Upcoming Exams
+                </div>
+                <div class="card-body">
+                  <p class="card-text">10</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-header bg-info text-white">Passed Exams</div>
+                <div class="card-body">
+                  <p class="card-text">45</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-header bg-secondary text-white">
+                  Average Score
+                </div>
+                <div class="card-body">
+                  <p class="card-text">75%</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Exam Details Table -->
+          <div class="card">
+            <div class="card-header bg-primary text-white">Exam Details</div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Subject</th>
+                      <th>Date</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Mathematics</td>
+                      <td>2024-01-15</td>
+                      <td>Active</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>TOC</td>
+                      <td>2024-01-20</td>
+                      <td>Upcoming</td>
+                    </tr>
+                    <!-- Additional Rows -->
+                    <tr>
+                      <td>3</td>
+                      <td>WevDev</td>
+                      <td>2024-01-25</td>
+                      <td>Upcoming</td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>DSA</td>
+                      <td>2024-01-30</td>
+                      <td>Completed</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </body>
+</html>

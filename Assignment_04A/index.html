@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html style="margin: 0px">
+  <head>
+    <title>Swipe Event</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/789df0d9d3.js"
+      crossorigin="anonymous"
+    ></script>
+
+
+    <script>
+      $(document).on("pagecreate", "#page1", function () {
+        var startY;
+
+
+        $("img").on("vmousedown", function (e) {
+          // Record the starting Y position of the touch event
+          startY = e.clientY || e.originalEvent.touches[0].clientY;
+        });
+
+
+        $("img").on("vmouseup", function (e) {
+          // Calculate the difference in Y position
+          var endY = e.clientY || e.originalEvent.changedTouches[0].clientY;
+          var deltaY = endY - startY;
+
+
+          // Set a threshold for vertical swipes
+          var threshold = 50;
+
+
+          // Check if the vertical swipe is significant
+          if (Math.abs(deltaY) > threshold) {
+            if (deltaY > 0) {
+              // Swipe down
+              //   $("span").text("Swipe down event occurred!!!");
+              $("img").attr("src", "./img5.jpg");
+            } else {
+              // Swipe up
+              //   $("span").text("Swipe up event occurred!!!");
+              $("img").attr("src", "./img4.jpg");
+            }
+          }
+        });
+
+
+        $("img").on("swiperight", function () {
+          $("img").attr("src", "./img2.jpg");
+        });
+
+
+        $("img").on("swipeleft", function () {
+          $("img").attr("src", "./img3.jpg");
+        });
+
+
+        $("button").on("click", function () {
+          // Reset the image source to the original one
+          $("img").attr("src", "./img1.jpg");
+        });
+
+
+        $(".fa-arrow-up").on("click", function () {
+          $("img").attr("src", "./img4.jpg");
+        });
+
+
+        $(".fa-arrow-down").on("click", function () {
+          $("img").attr("src", "./img5.jpg");
+        });
+
+
+        $(".fa-arrow-left").on("click", function () {
+          $("img").attr("src", "./img2.jpg");
+        });
+
+
+        $(".fa-arrow-right").on("click", function () {
+          // Handle click down logic
+          $("img").attr("src", "./img3.jpg");
+        });
+      });
+    </script>
+  </head>
+
+
+  <body style="margin: 0px">
+    <div data-role="page" id="page1">
+      <div data-role="main">
+        <img
+          src="./img1.jpg"
+          alt="Image"
+          style="
+            height: 80vh;
+            width: 80%;
+            border-radius: 50px;
+            margin-top: 100px;
+            margin-left: 150px;
+            transition: border-radius 0.5s ease-in-out;
+          "
+          onmouseover="this.style.borderRadius='100%'"
+          onmouseout="this.style.borderRadius='50px'"
+        />
+      </div>
+
+
+      <div style="position: absolute; top: 10px; left: 45%">
+        <button>Go to Main Image</button>
+        <div style="margin-left: 25%">
+          <i
+            class="fa-solid fa-arrow-right"
+            style="font-size: 24px; color: grey; height: 100px; cursor: pointer"
+            onmouseover="this.style.color='black'"
+            onmouseout="this.style.color='grey'"
+            onclick="handleArrowClick('right')"
+          ></i>
+          <i
+            class="fa-solid fa-arrow-up"
+            style="font-size: 24px; color: grey; height: 100px; cursor: pointer"
+            onmouseover="this.style.color='black'"
+            onmouseout="this.style.color='grey'"
+            onclick="handleArrowClick('up')"
+          ></i>
+          <i
+            class="fa-solid fa-arrow-down"
+            style="font-size: 24px; color: grey; height: 100px; cursor: pointer"
+            onmouseover="this.style.color='black'"
+            onmouseout="this.style.color='grey'"
+            onclick="handleArrowClick('down')"
+          ></i>
+          <i
+            class="fa-solid fa-arrow-left"
+            style="font-size: 24px; color: grey; height: 100px; cursor: pointer"
+            onmouseover="this.style.color='black'"
+            onmouseout="this.style.color='grey'"
+            onclick="handleArrowClick('left')"
+          ></i>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
